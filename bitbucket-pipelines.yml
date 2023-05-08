@@ -1,0 +1,15 @@
+image: maven:3.6.3-jdk-11
+
+pipelines:
+  default:
+    - step:
+        name: Build and Test
+        script:
+          - mvn clean install
+        services:
+          - selenium-chrome
+definitions:
+  services:
+    selenium-chrome:
+      image: selenium/standalone-chrome
+  

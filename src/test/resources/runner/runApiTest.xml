@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="BCP Automation">
+	<listeners>
+		<listener class-name="com.bond.listeners.ExtentListeners" />
+		<listener class-name="com.bond.errorCollectors.TestListenerAdapter" />
+	</listeners>
+	<test name="BCP Automation - Tests">
+		<groups>
+			<run>
+				<include name="API" />
+				<include name="UI" />
+				<include name="Regression" />
+			</run>
+		</groups>
+		<classes>
+			
+			<!-- API Test -->
+			 <class name="com.osqo.api.test.TestAggregatorApi" />
+			<class name="com.osqo.api.test.TestSubAggregatorApi" />
+			<class name="com.osqo.api.test.TestBrokerGroupApi" />
+			<class name="com.osqo.api.test.TestBrokerApi" />
+			<class name="com.osqo.api.test.TestBorrowerApi" />
+			<class name="com.osqo.api.test.TestBorrowerPartyApi" />
+			<class name="com.osqo.api.test.TestScenarioApi" />
+			<class name="com.osqo.api.test.TestPropertyClassApi" />
+			<class name="com.osqo.api.test.TestGuarantorApi" />
+			<class name="com.osqo.api.test.TestPropertyApi" />
+			<class name="com.osqo.api.test.TestInvestorApi" />
+
+			<!--Update HL API Test -->
+			<class name="com.osqo.api.test.TestUpdateHLApi" />
+		</classes>
+	</test>
+</suite> 
+ 	 	
