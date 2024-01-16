@@ -497,7 +497,7 @@ public class OsqoApiPage extends EmailUtils {
 			JSONObject respone = new JSONObject(response.asString());
 			String message = respone.getString("message");
 			if (isUpdate) {
-				if (message.equalsIgnoreCase("Guarantor updated successfully")) {
+				if ("Guarantor updated successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "Message: " + message, Status.PASS);
 
 				} else {
@@ -506,7 +506,7 @@ public class OsqoApiPage extends EmailUtils {
 				}
 			} else {
 				
-				if (message.equalsIgnoreCase("Guarantor created successfully")) {
+				if ("Guarantor created successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "Message: " + message, Status.PASS);
 
 				} else {
@@ -743,7 +743,7 @@ public class OsqoApiPage extends EmailUtils {
 				Assert.assertFalse(true);
 			JSONObject respone = new JSONObject(response.asString());
 			String message = respone.getString("message");
-			if (!message.equalsIgnoreCase("Aggregator created successfully"))
+			if (!"Aggregator created successfully".equalsIgnoreCase(message))
 				Assert.assertFalse(true);
 
 			JSONArray array = respone.getJSONArray("items");
@@ -891,7 +891,7 @@ public class OsqoApiPage extends EmailUtils {
 			String message = respone.getString("message");
 			addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.PASS);
 			addSubStep(subSteps, "<b>Response Status is = " + StatusCode + "</b>", Status.PASS);
-			if (!message.equalsIgnoreCase("Aggregator updated successfully"))
+			if (!"Aggregator updated successfully".equalsIgnoreCase(message))
 				Assert.assertFalse(true);
 
 			JSONArray array = respone.getJSONArray("items");
@@ -1426,14 +1426,14 @@ public class OsqoApiPage extends EmailUtils {
 			addSubStep(subSteps, "<b>Response Status is = " + StatusCode + "</b>", Status.PASS);
 			String message = respone.getString("message");
 			if (isUpdate) {
-				if (!message.equalsIgnoreCase("Scenario updated successfully")) {
+				if (!"Scenario updated successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "<b>Message is : " + message + "</b>", Status.FAIL);
 					Assert.assertFalse(true);
 				}
 				addSubStep(subSteps, "<b>Message is : " + message + "</b>", Status.PASS);
 
 			} else {
-				if (!message.equalsIgnoreCase("Scenario created successfully")) {
+				if (!"Scenario created successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "<b>Message is : " + message + "</b>", Status.FAIL);
 					Assert.assertFalse(true);
 				}
@@ -1563,7 +1563,7 @@ public class OsqoApiPage extends EmailUtils {
 			if (respone.has("message")) {
 				String message = respone.getString("message");
 				addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.INFO);
-				if (message.equalsIgnoreCase("Unauthorized")) {
+				if ("Unauthorized".equalsIgnoreCase(message)) {
 					Assert.assertFalse(true);
 				}
 			}
@@ -1728,7 +1728,7 @@ public class OsqoApiPage extends EmailUtils {
 		JSONObject responseValue = new JSONObject(response.asString());
 		if (responseValue.has("message")) {
 			String messsage = responseValue.getString("message");
-			if (messsage.equalsIgnoreCase("Not Found ")) {
+			if ("Not Found ".equalsIgnoreCase(messsage)) {
 				addSubStep(subSteps, "Message: " + messsage, status.FAIL);
 			}
 		}
@@ -1869,7 +1869,7 @@ public class OsqoApiPage extends EmailUtils {
 				
 				respone = new JSONObject(response.asString());
 				message = respone.getString("message");
-				if (!message.equalsIgnoreCase("Broker Group created successfully")) {
+				if (!"Broker Group created successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.FAIL);
 					Assert.assertFalse(true);
 				}
@@ -1882,7 +1882,7 @@ public class OsqoApiPage extends EmailUtils {
 				
 				respone = new JSONObject(response.asString());
 				message = respone.getString("message");
-				if (!message.equalsIgnoreCase("Broker Group updated successfully")) {
+				if (!"Broker Group updated successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.FAIL);
 					Assert.assertFalse(true);
 				}
@@ -2068,12 +2068,12 @@ public class OsqoApiPage extends EmailUtils {
 			JSONObject respone = new JSONObject(response.asString());
 			String message = respone.getString("message");
 			if (isUpdated) {
-				if (!message.trim().equalsIgnoreCase("Broker updated successfully"))
+				if (!"Broker updated successfully".equalsIgnoreCase(message.trim()))
 					Assert.assertFalse(true);
 				addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.PASS);
 
 			} else {
-				if (!message.trim().equalsIgnoreCase("Broker created successfully"))
+				if (!"Broker created successfully".equalsIgnoreCase(message.trim()))
 					Assert.assertFalse(true);
 				addSubStep(subSteps, "<b>Response is : " + message + "</b>", Status.PASS);
 
@@ -2752,7 +2752,7 @@ public class OsqoApiPage extends EmailUtils {
 			JSONObject respone = new JSONObject(response.asString());
 			String message = respone.getString("message");
 			if (isUpdate) {
-				if (!message.equalsIgnoreCase("Borrower party updated successfully")) {
+				if (!"Borrower party updated successfully".equalsIgnoreCase(message)) {
 					addSubStep(subSteps, message, Status.FAIL);
 
 				} else {
@@ -2878,7 +2878,7 @@ public class OsqoApiPage extends EmailUtils {
 			String message = responseValue.getString("message");
 			addSubStep(subSteps, "message: " + message + "", Status.FAIL);
 
-			if (message.equalsIgnoreCase("Not found"))
+			if ("Not found".equalsIgnoreCase(message))
 				Assert.assertFalse(true);
 
 		}

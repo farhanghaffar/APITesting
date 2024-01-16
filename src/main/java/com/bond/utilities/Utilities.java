@@ -51,7 +51,7 @@ public class Utilities extends BaseClass {
 				
 				String runmode = excel.getCellData(sheetName, "Runmode", rNum);
 				
-				if(runmode.equalsIgnoreCase("Y"))
+				if("Y".equalsIgnoreCase(runmode))
 					return true;
 				else
 					return false;
@@ -93,8 +93,8 @@ public class Utilities extends BaseClass {
 	public static boolean validateString(String str) {
 		boolean validate = false;
 		try {
-			if (!str.isEmpty() && str != null && !str.equalsIgnoreCase("") && !str.equalsIgnoreCase("null")
-					&& !str.equalsIgnoreCase(" ") && !str.equalsIgnoreCase("NA")) {
+			if (!str.isEmpty() && str != null && !"".equalsIgnoreCase(str) && !"null".equalsIgnoreCase(str)
+					&& !" ".equalsIgnoreCase(str) && !"NA".equalsIgnoreCase(str)) {
 				validate = true;
 			}
 		} catch (Exception e) {
