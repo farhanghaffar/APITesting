@@ -1,6 +1,8 @@
 package com.bond.utilities;
 
 
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -124,7 +126,7 @@ public class APIClient
 	private Object sendRequest(String method, String uri, Object data)
 		throws MalformedURLException, IOException, APIException
 	{
-		URL url = new URL(this.m_url + uri);
+		URL url = Urls.create(this.m_url + uri, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
 		System.out.println("URL : '"+url + "'");
 		// Create the connection object and set the required HTTP method
 		// (GET/POST) and headers (content type and basic auth).
