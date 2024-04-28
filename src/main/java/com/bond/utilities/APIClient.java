@@ -133,7 +133,7 @@ public class APIClient
 		String auth = getAuthorization(this.m_user, this.m_password);
 		conn.addRequestProperty("Authorization", "Basic " + auth);
 		
-		if (method.equals("POST"))
+		if ("POST".equals(method))
 		{
 			System.out.println("in Post'");
 			conn.setRequestMethod("POST");

@@ -51,7 +51,7 @@ public class Utilities extends BaseClass {
 				
 				String runmode = excel.getCellData(sheetName, "Runmode", rNum);
 				
-				if(runmode.equalsIgnoreCase("Y"))
+				if("Y".equalsIgnoreCase(runmode))
 					return true;
 				else
 					return false;

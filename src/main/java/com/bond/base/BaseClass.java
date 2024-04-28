@@ -155,11 +155,11 @@ public class BaseClass {
 		} else {
 			env = PropertiesReader.getPropertyValue("env");
 		}
-		if (browser.equals("firefox")) {
+		if ("firefox".equals(browser)) {
 			System.setProperty("webdriver.gecko.driver", "gecko.exe");
 			driver = new FirefoxDriver();
 //			log.debug("Firefox Driver initialized");
-		} else if (browser.equals("chrome")) {
+		} else if ("chrome".equals(browser)) {
 			if(isWindows()) {
 				WebDriverManager.chromedriver().setup();
 //				System.setProperty("webdriver.chrome.driver",
@@ -207,7 +207,7 @@ public class BaseClass {
 				
 			}
 			
-		} else if (browser.equals("ie")) {
+		} else if ("ie".equals(browser)) {
 			System.setProperty("webdriver.ie.driver",
 					System.getProperty("user.dir") + ""+File.separator+"src"+File.separator+"test"+File.separator+"resources"+File.separator+"executables"+File.separator+"IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
