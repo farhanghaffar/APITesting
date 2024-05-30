@@ -151,7 +151,9 @@ public class ExcelReader {
 			return "";
 		cell = row.getCell(colNum);
 		if(cell==null)
-			return "";
+			{
+			    return "";
+			}
 		
 	  if(cell.getCellType()==Cell.CELL_TYPE_STRING)
 		  return cell.getStringCellValue();
@@ -372,9 +374,13 @@ public class ExcelReader {
 		
 		
 		if(row.getLastCellNum() == -1)
-			cell = row.createCell(0);
+			{
+			    cell = row.createCell(0);
+			}
 		else
-			cell = row.createCell(row.getLastCellNum());
+			{
+			    cell = row.createCell(row.getLastCellNum());
+			}
 	        
 	        cell.setCellValue(colName);
 	        cell.setCellStyle(style);
@@ -473,7 +479,9 @@ public class ExcelReader {
 		
 		url=url.replace('\\', '/');
 		if(!isSheetExist(sheetName))
-			 return false;
+			 {
+			     return false;
+			 }
 		
 	    sheet = workbook.getSheet(sheetName);
 	    
