@@ -1,6 +1,7 @@
 package com.bond.utilities;
 
 
+import io.github.pixee.security.BoundedLineReader;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -253,7 +254,7 @@ public class APIClient
 			);
 		
 			String line;
-			while ((line = reader.readLine()) != null)
+			while ((line = BoundedLineReader.readLine(reader, 5_000_000)) != null)
 			{
 				text += line;
 				text += System.getProperty("line.separator");
