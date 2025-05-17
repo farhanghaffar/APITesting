@@ -1,5 +1,6 @@
 package com.bond.pages;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -1772,7 +1773,7 @@ public class CreateBondPage extends EmailUtils {
 			waitTime(wait);
 
 			primaryMail = secondaryEmailId;
-			Random rand = new Random();
+			Random rand = new SecureRandom();
 
 			int number = rand.nextInt(100);
 			String email = "farhanghaffer+" + number + "@methodbridge.com";
